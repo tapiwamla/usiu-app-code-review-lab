@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const http = require('http');
@@ -19,7 +18,7 @@ describe('Server.js Tests', () =>{
     
     beforeAll((done) => {
         const httpServer = http.createServer(app);
-         io = new Server(httpServer);
+         socket.io = new Server(httpServer); // intentional bug
 
         httpServer.listen(PORT,  () =>{
             const port = httpServer.address().port;
