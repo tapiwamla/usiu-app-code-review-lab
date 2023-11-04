@@ -18,7 +18,11 @@ describe('Server.js Tests', () =>{
     
     beforeAll((done) => {
         const httpServer = http.createServer(app);
+//<<<<<<< test
+         //client2.io = new Server(httpServer); //client bug
+//=======
          socket.io = new Server(httpServer); //intentional socket
+//>>>>>>> main
 
         httpServer.listen(PORT,  () =>{
             const port = httpServer.address().port;
